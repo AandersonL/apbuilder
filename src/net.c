@@ -66,11 +66,7 @@ int send_tcp_packet(Packet* p)
     fprintf(stdout, "\nResponse:\n\n %s\n", p->data_recv);
   }
 
-  close(p->socket);
-  if ( p->has_file )
-   free(p->data_sent);
-  free(p);
-
+  clean(p);
   fprintf(stdout, "Connection closed\n");
   return HOST_ONLINE;
 }
@@ -88,7 +84,7 @@ int send_udp_packet(Packet* p)
   recvfrom(p->socket, p->data_recv, strlen(p->data_recv), 0, ( struct sockaddr * )&p->socks_info,  &sin_size); 
   fprintf(stdout,"\nServer response:\n\t%s\n", p->data_recv); 
   
-  close(p->socket);
+  clean(p);
   return 0;
 }
 
@@ -115,6 +111,16 @@ char* get_status(Packet* p)
       return CLOSED;
   } 
   return FILTERED;
+}
+
+
+void clean(Packet* p)
+{
+  close(p->socket);
+  if ( p->has_file )
+    free(p->data_sent);
+
+  free(p);
 }
 
 void display_status(Packet* p, const char* port_state)

@@ -29,4 +29,5 @@ Packet* setup_socket(Arg* args);
 int send_tcp_packet(Packet* p);
 int send_udp_packet(Packet* p);
 char* get_status(Packet* p);
+void clean(Packet* p);
 void display_status(Packet* p, const char* status);
