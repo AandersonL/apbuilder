@@ -30,7 +30,7 @@ For compile for your system and install, just type
 
 There is a simple python3 server that you can use for tests
       
-      python3 server.py <port_num>
+     python3 server.py <port_num>
    
    
 Checking a service
