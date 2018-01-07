@@ -24,15 +24,22 @@ For compile for your system and install, just type
        --type, -t 			Type: TCP, UDP
        --timeout, -T 		Timeout, default: 10 seconds 
  
- ### Examples
+ 
+### Examples
+ 
+
+There is a simple python3 server that you can use for tests
+      python3 server.py <port_num>
+   
+   
 Checking a service
 
 
-    apbuilder -h example.com -p 22
+    apbuilder -h localhost -p 22
     
 Checking a service with timeout
 
-    apbuilder -h example.com -p 445 -T 30
+    apbuilder -h localhost -p 445 -T 30
    
 Sending custom data
 
