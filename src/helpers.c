@@ -30,7 +30,6 @@ int set_data(char** data, const char* fileName)
   fseek(f, 0, SEEK_END);
   buff = ftell(f);
   fseek(f, 0, SEEK_SET);
-  printf("%ld\n", sizeof(buff));
   *data = malloc(sizeof(char)* buff + 1);
   fread(*data, buff, 1, f);
   fclose(f);
