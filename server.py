@@ -22,11 +22,13 @@ class Server(object):
             print("Connected with {}:{}".format(addr[0],str(addr[1])))
             conn.send("Hello from host".encode())
             data = conn.recv(4096)
-            print("raw data {}".format(data))
-            conn.send("closing..".encode())
+            
+            if data != "":
+                print("raw data {}".format(data))
+                conn.send("closing..".encode())
+            
             conn.close()
-
-
+            print("Disconnected with: {}:{}".format(addr[0], str(addr[1])))
 
 def main():
     if ( len(sys.argv) < 2 ):
