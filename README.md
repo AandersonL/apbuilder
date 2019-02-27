@@ -1,6 +1,6 @@
 # apBuilder - Another Packet Builder
 
-apbuilder is TCP/UDP packet builder writed with raw sockets, wich allow you to check services and send custom data to a remote host.
+apbuilder is TCP/UDP packet builder written with raw sockets, wich allow you to check services and send custom data to a remote host.
 
 ## Install
 
